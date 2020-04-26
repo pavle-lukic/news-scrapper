@@ -1,3 +1,6 @@
+{{!-- This is what the main.handlebars will render in the body part --}}
+{{!-- each container text-center my-4 represents a unique source --}}
+{{!-- names are taken from the passed in object from app.js --}}
 <div class="container text-center my-4">
   <h2 class='display-3 font-weight-bold'>PC GAMER</h2>
 </div>
@@ -29,6 +32,26 @@
     {{#each yt}}
     <div class="card scroll mx-2">
       <img class="card-img-top img-fluid" src="{{this.img}}" alt="news image">
+      <div class="card-body">
+        <div class="desc mb-4">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.desc}}</p>
+        </div>
+        <div class="result-footer">
+          <a href={{this.url}} class="card-link btn btn-dark col-lg-12">VISIT</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<div class="container text-center  my-4">
+  <h2 class='display-3 font-weight-bold'>IGN</h2>
+</div>
+<div class="container-fluid">
+  <div class="wrapper d-flex flex-row flex-nowrap">
+    {{#each ign}}
+    <div class="card scroll mx-2">
       <div class="card-body">
         <div class="desc mb-4">
           <h5 class="card-title">{{this.title}}</h5>
