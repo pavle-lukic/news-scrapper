@@ -39,7 +39,7 @@ const ignSelector = {
   allResults: 'div.search-list',
   singleResult: 'div.search-item',
   resultName: 'div.search-item-title',
-  resultLinkL: 'a',
+  resultLink: 'div.search-item-title > a',
   resultDesc: 'div.search-item-description',
   resultImage: 'img',
 };
@@ -64,9 +64,15 @@ const ign = new Source(
   true
 );
 
+function getAll() {
+  return [
+    pcGamer,
+    youtube,
+    ign
+  ];
+}
+
 // exporting the objects so that they can be used in app.js
 module.exports = {
-  pcGamer,
-  youtube,
-  ign,
+  getAll
 };
