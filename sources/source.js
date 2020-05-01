@@ -1,21 +1,13 @@
-// attempt at making a class that will have some overlaping values
-// idea was that to pass everything in the arguments, but with all of the selectors
-// it would look messy
 class Source {
   constructor(name, url, selector, bool) {
-    // name is currently unused, thought about passing it to templating engine
-    // instead of hardcoding h2 values
     this.name = name;
     this.url = url;
     this.selector = selector;
-    //  this render key should have been used to check if the obj
-    // needs to use puppeteer or not, curently not used
     this.renderAfterRequest = bool;
   }
 }
 
 const pcGamerSelector = {
-  // all of these were added after checking in actual functions if they work
   allResults: 'div.listingResults',
   singleResult: 'div.listingResult.small',
   resultName: 'h3.article-name',
@@ -25,7 +17,6 @@ const pcGamerSelector = {
 };
 
 const youtubeSelector = {
-  // all of these were added after checking in actual functions if they work
   allResults: 'ytd-search',
   singleResult: 'ytd-video-renderer',
   resultName: 'a.yt-simple-endpoint',
@@ -35,7 +26,6 @@ const youtubeSelector = {
 };
 
 const ignSelector = {
-  // all of these were added after checking in actual functions if they work
   allResults: 'div.search-list',
   singleResult: 'div.search-item',
   resultName: 'div.search-item-title',
@@ -48,7 +38,7 @@ const pcGamer = new Source(
   'PcGamer',
   'https://www.pcgamer.com/search/?searchTerm=',
   pcGamerSelector,
-  true
+  false
 );
 
 const youtube = new Source(
@@ -61,18 +51,13 @@ const ign = new Source(
   'IGN',
   'https://www.ign.com/search?type=article&filter=articles&q=',
   ignSelector,
-  true
+  false
 );
 
 function getAll() {
-  return [
-    pcGamer,
-    youtube,
-    ign
-  ];
+  return [pcGamer, youtube, ign];
 }
 
-// exporting the objects so that they can be used in app.js
 module.exports = {
-  getAll
+  getAll,
 };
