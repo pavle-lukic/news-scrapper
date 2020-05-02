@@ -1,7 +1,4 @@
 const express = require('express');
-const axios = require('axios');
-const puppeteer = require('puppeteer');
-const cheerio = require('cheerio');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
@@ -17,7 +14,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(morgan('dev'));
 app.get('/', async (req, res) => {
   console.time('YT');
-  const searchTerm = req.query.search;
+  const searchTerm = req.query.search || 'news';
   const promises = sources
     .getAll()
     .map((source) => getDataFromSource(source, searchTerm));
