@@ -9,7 +9,7 @@ async function downloadHtml(url, query) {
 }
 
 async function downloadYT(url, query) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
   await page.goto(`${url}${query}`);
   const bodyHTML = await page.evaluate(() => document.body.innerHTML);
