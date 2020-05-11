@@ -25,6 +25,9 @@ body {
 .card-img-top {
   object-fit: cover;
 }
+.news-card {
+  background-color: #373d55;
+}
 #banner {
   margin-top: 0;
   background-image: url(../images/banner.jpg);
@@ -34,7 +37,7 @@ body {
   height: 80vh;
 }
 #title {
-  color: #2a324b;
+  color: #222842;
 }
 #footer {
   background-color: #222842;

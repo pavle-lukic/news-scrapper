@@ -1,3 +1,5 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 const axios = require('axios');
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');

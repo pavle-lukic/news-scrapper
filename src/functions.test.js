@@ -1,5 +1,5 @@
 const fs = require('fs');
-const sources = require('../../sources/source');
+const sources = require('./source');
 
 const {
   getDownloader,
