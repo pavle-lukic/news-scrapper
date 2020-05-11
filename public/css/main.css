@@ -1,4 +1,11 @@
-/* custom css to allow horizontal scroll for each article */
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background-color: #2a324b;
+  color: #e1e5ee;
+}
 .wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -17,4 +24,18 @@
 }
 .card-img-top {
   object-fit: cover;
+}
+#banner {
+  margin-top: 0;
+  background-image: url(../images/banner.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  height: 80vh;
+}
+#title {
+  color: #2a324b;
+}
+#footer {
+  background-color: #222842;
 }

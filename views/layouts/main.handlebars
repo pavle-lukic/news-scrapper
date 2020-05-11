@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
@@ -13,20 +14,103 @@
 
   </style>
 </head>
-{{!-- in main.handlebars put all the stuff that doesn't change, ex css/js links, navbar, footer  --}}
 
-<body>
-  <h1 class="my-4 text-center">Welcome to my site</h1>
-  <div class="container text-center mt-4">
-    <form action='/' method='GET' class="form-inline mt-4">
-      <input class="form-control form-control-sm ml-3 w-75" type="search" name="search" placeholder="Search"
-        aria-label="Search">
-      <input type="submit" class="btn" value="SUBMIT">
-    </form>
+<body class="m-0">
+  {{!-- nav part --}}
+  <div class="container-fluid mt-0 bg-transparent" id="banner">
+    <div class="row ml-4">
+      <div class="jumbotron bg-transparent col-lg-4 my-4 ml-4" id="title">
+        <br class="my-4">
+        <br class="my-4">
+        <br class="my-4">
+        <br class="my-4">
+        <h1 class="display-2 font-weight-bold mt-4 ml-4">ALL IN ONE</h1>
+        <hr class="my-2 ml-4">
+        <p class="lead display-4 ml-4">Find latest news for what you want</p>
+      </div>
+
+    </div>
   </div>
-  {{!-- where home.handlebars will be rendered --}}
-  {{{body}}}
+  {{!-- instructions part --}}
+  <div class="container">
+    <div class="">
+      <div class="col-lg-8 bg-secondary mx-auto mt-4 pb-4" id="instructions">
+        <h2 class="text-center">INSTRUCTIONS</h2>
+        <p class="lead">To search for news articles simply enter them in the search bar below and click search
+          button. If the term
+          has multiple words in it you are free to use regular spaces to seperate them.
+          <br>
+          In addition if you are looking for articles on different topics at the same time, you can type them in the
+          search bar at the same time, just seperate them with a
+          comma. <br>
+          Example:"Fist Subject,Second Subject."
+          <br>
+          This will bring up news articles for both subjects
+          from all available sources
+          <br>
+          Currently there is a limit to how many seperate subjects you can search for. Even if you pass in 100 different
+          comma seperated expressions, there will only be 3-4 unique requests</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-10 mx-auto">
+    <div class="container-fluid col-lg-4 text-center mt-4">
+      <form action='/' method='GET' class=" mt-4">
+        <input class="form-control form-control-sm col-lg-12" type="search" name="search" placeholder="Search"
+          aria-label="Search">
+        <div class="">
+          <input type="submit" class="btn btn-secondary col-lg-12 mt-2" value="SEARCH">
+        </div>
 
+      </form>
+    </div>
+    {{!-- where home.handlebars will be rendered --}}
+    {{{body}}}
+  </div>
+
+  </div>
+
+  <footer class="page-footer font-small blue pt-4 bg-dg mt-4" id="footer">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Disclaimer</h5>
+          <p>
+            This Website was made as a showcase and not to be used as a substitute news source. To read more on the
+            things you are intrested
+            , it is recomended that you visit the sites in question.
+          </p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3" />
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a class="parYellow" href="#!">GitHub</a>
+            </li>
+            <li>
+              <a class="parYellow" href="#!">Portfolio</a>
+            </li>
+            <li>
+              <a class="parYellow" href="#!">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h5 class="text-uppercase">Other Projects</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a class="parYellow" href="#!">Coming Soon</a>
+            </li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3 bg-d">
+      © 2020 Copyright:
+      <a href="#"> Pavle Lukic</a>
+    </div>
+  </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

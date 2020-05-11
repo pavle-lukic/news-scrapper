@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
 const sources = require('./sources/source');
-const { getDataFromSource } = require('./public/js/functions');
+const { getDataForKeywords } = require('./public/js/functions');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,17 +13,15 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(morgan('dev'));
 app.get('/', async (req, res) => {
-  console.time('YT');
   const searchTerm = req.query.search || 'news';
   const promises = sources
     .getAll()
-    .map((source) => getDataFromSource(source, searchTerm));
+    .map((source) => getDataForKeywords(source, searchTerm.split(',', 4)));
   await Promise.all(promises).then((results) => {
     res.render('home', {
       data: results,
     });
   });
-  console.timeEnd('YT');
 });
 // app.get('/:id', async (req, res) => {
 //   console.time('start');

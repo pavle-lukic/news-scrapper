@@ -1,0 +1,13 @@
+{{!-- This is what the main.handlebars will render in the body part --}}
+{{!-- each container text-center my-4 represents a unique source --}}
+{{!-- names are taken from the passed in object from app.js --}}
+
+{{#each data}}
+<h1>Works</h1>
+{{#each this}}
+PerSource
+{{#each this}}
+PerKeyword
+{{/each}}
+{{/each}}
+{{/each}}

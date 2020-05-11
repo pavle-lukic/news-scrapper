@@ -86,6 +86,13 @@ async function getDataFromSource(source, searchTerm) {
   }));
 }
 
+async function getDataForKeywords(source, keywords) {
+  const promises = keywords.map((keyword) =>
+    getDataFromSource(source, keyword)
+  );
+  return Promise.all(promises);
+}
+
 module.exports = {
   getDataFromSource,
   getDownloader,
@@ -94,4 +101,5 @@ module.exports = {
   selectYT,
   downloadYT,
   downloadHtml,
+  getDataForKeywords,
 };

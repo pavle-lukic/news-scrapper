@@ -1,31 +1,31 @@
-{{!-- This is what the main.handlebars will render in the body part --}}
-{{!-- each container text-center my-4 represents a unique source --}}
-{{!-- names are taken from the passed in object from app.js --}}
-
-{{#each data}}
-<div class="container text-center my-4">
-  <h2 class='display-3 font-weight-bold'>{{this.name}}</h2>
-</div>
-<div class="container-fluid">
-  <div class="wrapper d-flex flex-row flex-nowrap">
-    {{#each this.results}}
-    <div class="card scroll mx-2">
-      {{#if this.img}}
-      <img class="card-img-top img-fluid" src="{{this.img}}" alt="news image">
-      {{/if}}
-      <div class="card-body">
-        <div class="desc">
-          <h5 class="card-title">{{this.title}}</h5>
-          <p class="card-text">{{this.desc}}</p>
-        </div>
-
-        <div class="result-footer">
-          <a href={{this.url}} class="card-link btn btn-dark col-lg-12">VISIT</a>
-        </div>
-
-      </div>
-    </div>
-    {{/each}}
+<div>
+  {{#each data}}
+  <div class="container text-center my-4">
+    <h2 class='display-3 font-weight-bold'>{{this.[0].source.name}}</h2>
   </div>
+  {{#each this}}
+  <div class="container-fluid">
+    <div class="wrapper d-flex flex-row flex-nowrap">
+      {{#each this.results}}
+      <div class="card scroll mx-2 bg-transparent">
+        {{#if this.img}}
+        <img class="card-img-top img-fluid" src="{{this.img}}" alt="news image">
+        {{/if}}
+        <div class="card-body">
+          <div class="desc">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.desc}}</p>
+          </div>
+
+          <div class="result-footer">
+            <a href={{this.url}} class="card-link btn btn-secondary col-lg-12">VIEW ORIGINAL</a>
+          </div>
+
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/each}}
+  {{/each}}
 </div>
-{{/each}}
