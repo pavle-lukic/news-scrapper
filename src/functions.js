@@ -94,7 +94,10 @@ async function getDataForKeywords(source, keywords) {
   const promises = keywords.map((keyword) =>
     getDataFromSource(source, keyword)
   );
-  return Promise.all(promises);
+  return Promise.all(promises).catch((er) => {
+    console.log(er);
+    console.log('error happened');
+  });
 }
 
 module.exports = {

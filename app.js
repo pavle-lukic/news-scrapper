@@ -16,8 +16,6 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', async (req, res) => {
   const searchTerm = req.query.search || 'news';
   const requestData = true;
-  // TODO: check value of requestData before sending a request, if its true then
-  // the call was recent and the end user shouldn't be able to call again
   const promises = sources
     .getAll()
     .map((source) => getDataForKeywords(source, searchTerm.split(',', 4)));

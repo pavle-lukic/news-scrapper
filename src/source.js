@@ -25,14 +25,16 @@ const youtubeSelector = {
   resultImage: 'img.yt-img-shadow',
 };
 
-const ignSelector = {
-  allResults: 'div.search-list',
-  singleResult: 'div.search-item',
-  resultName: 'div.search-item-title',
-  resultLink: 'div.search-item-title > a',
-  resultDesc: 'div.search-item-description',
-  resultImage: 'img',
-};
+// const ignSelector = {
+//   allResults: 'div.search-list',
+//   singleResult: 'div.search-item',
+//   resultName: 'div.search-item-title',
+//   resultLink: 'div.search-item-title > a',
+//   resultDesc: 'div.search-item-description',
+//   resultImage: 'img',
+// };
+
+// TOFIX check parameters that ign responds with for DOM traversal
 
 const pcGamer = new Source(
   'PcGamer',
@@ -47,15 +49,17 @@ const youtube = new Source(
   youtubeSelector,
   true
 );
-const ign = new Source(
-  'IGN',
-  'https://www.ign.com/search?type=article&filter=articles&q=',
-  ignSelector,
-  false
-);
+// const ign = new Source(
+//   'IGN',
+//   'https://www.ign.com/search?type=article&filter=articles&q=',
+//   ignSelector,
+//   false
+// );
+
+// TOFIX Ign changed their promise params
 
 function getAll() {
-  return [pcGamer, youtube, ign];
+  return [pcGamer, youtube];
 }
 
 module.exports = {
